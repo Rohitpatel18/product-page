@@ -165,7 +165,6 @@ const ProductLists = () => {
     return titleMatch && priceMatch && categoryMatch;
   });
 
-  // Sort function
   const sortedData = filteredData.sort((a, b) => {
     if (sortOption === "price") {
       return sortOrder === "asc" ? a.price - b.price : b.price - a.price;
@@ -178,7 +177,7 @@ const ProductLists = () => {
   });
 
   return (
-    <div className="product-container">
+    <div>
       <div className="filters">
         <input
           type="text"
@@ -225,16 +224,18 @@ const ProductLists = () => {
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
         >
-          <option value="">values</option>
+          <option value="values">values</option>
           <option value="asc">Low-To-High</option>
           <option value="desc">High-To-Low</option>
         </select>
       </div>
-      {sortedData.map((product, index) => (
-        <ProductItem key={index} product={product} />
-      ))}
-      {loading && <p>Loading...</p>}
-      {!loading && hasMore && <div ref={lastProductRef}></div>}
+      <div className="product-container">
+        {sortedData.map((product, index) => (
+          <ProductItem key={index} product={product} />
+        ))}
+        {loading && <p>Loading...</p>}
+        {!loading && hasMore && <div ref={lastProductRef}></div>}
+      </div>
     </div>
   );
 };

@@ -30,38 +30,85 @@ const Details = () => {
     slidesToScroll: 1,
   };
 
+  // return (
+  // <>
+  //   {selectedProduct && (
+  //     <div>
+  //       {selectedProduct.images && selectedProduct.images.length > 1 ? (
+  //         <Slider {...sliderSettings}>
+  //           {selectedProduct.images.map((image, index) => (
+  //             <div key={index}>
+  //               <img
+  //                 src={image}
+  //                 alt={`Product Image ${index + 1}`}
+  //                 style={{ width: "400px", height: "300px", margin: "auto" }}
+  //               />
+  //             </div>
+  //           ))}
+  //         </Slider>
+  //       ) : (
+  //         <img
+  //           src={selectedProduct?.images[0]}
+  //           alt={`Product Image ${1}`}
+  //           style={{ width: "400px", height: "300px", margin: "auto" }}
+  //         />
+  //       )}
+  //       <div>
+  //         <h2>Title: {selectedProduct.title}</h2>
+  //         <p>Description: {selectedProduct.description}</p>
+  //         <p>Price: {selectedProduct.price}</p>
+  //         <p>Discount: {selectedProduct.discountPercentage}</p>
+  //         <p>Rating: {selectedProduct.rating}</p>
+  //         <p>Stock: {selectedProduct.stock}</p>
+  //         <p>Brand: {selectedProduct.brand}</p>
+  //         <p>Category: {selectedProduct.category}</p>
+  //       </div>
+  //     </div>
+  //   )}
+  // </>
   return (
     <>
       {selectedProduct && (
-        <div>
-          {selectedProduct.images && selectedProduct.images.length > 1 ? (
-            <Slider {...sliderSettings}>
-              {selectedProduct.images.map((image, index) => (
-                <div key={index}>
-                  <img
-                    src={image}
-                    alt={`Product Image ${index + 1}`}
-                    style={{ width: "400px", height: "300px", margin: "auto" }}
-                  />
-                </div>
-              ))}
-            </Slider>
-          ) : (
-            <img
-              src={selectedProduct?.images[0]}
-              alt={`Product Image ${1}`}
-              style={{ width: "400px", height: "300px", margin: "auto" }}
-            />
-          )}
-          {/* <h1>ID: {selectedProduct.id}</h1> */}
-          <h2>Title: {selectedProduct.title}</h2>
-          <p>Description: {selectedProduct.description}</p>
-          <p>Price: {selectedProduct.price}</p>
-          <p>Discount: {selectedProduct.discountPercentage}</p>
-          <p>Rating: {selectedProduct.rating}</p>
-          <p>Stock: {selectedProduct.stock}</p>
-          <p>Brand: {selectedProduct.brand}</p>
-          <p>Category: {selectedProduct.category}</p>
+        <div className="container">
+          <div className="slider">
+            {selectedProduct.images && selectedProduct.images.length > 1 ? (
+              <Slider {...sliderSettings}>
+                {selectedProduct.images.map((image, index) => (
+                  <div key={index}>
+                    <img
+                      src={image}
+                      alt={`Product Image ${index + 1}`}
+                      style={{
+                        width: "400px",
+                        height: "400px",
+                      }}
+                    />
+                  </div>
+                ))}
+              </Slider>
+            ) : (
+              <img
+                src={selectedProduct?.images[0]}
+                alt={`Product Image ${1}`}
+                style={{
+                  width: "300px",
+                  height: "300px",
+                }}
+              />
+            )}
+          </div>
+          <div className="details">
+            <div className="box">
+              <h2>Title: {selectedProduct.title}</h2>
+              <p>Description: {selectedProduct.description}</p>
+              <p>Price: {selectedProduct.price}</p>
+              <p>Discount: {selectedProduct.discountPercentage}</p>
+              <p>Rating: {selectedProduct.rating}</p>
+              <p>Stock: {selectedProduct.stock}</p>
+              <p>Brand: {selectedProduct.brand}</p>
+              <p>Category: {selectedProduct.category}</p>
+            </div>
+          </div>
         </div>
       )}
     </>

@@ -12,3 +12,34 @@ h1{
 body{
   background-color:lightgreen;
 }
+
+
+.container {
+  display: flex;
+}
+
+.slider {
+  width: 60%; 
+  margin-right: 20px;
+}
+
+.slider .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider .slick-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; 
+}
+
+.details {
+  width: 50%; 
+}
+
+.box {
+  padding: 20px;
+  border-radius: 5px;
+}
