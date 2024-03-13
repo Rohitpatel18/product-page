@@ -1,0 +1,14 @@
+
+h1{
+  text-align: center;
+  color: black;
+}
+
+.prod{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 80px;
+}
+body{
+  background-color:lightgreen;
+}
